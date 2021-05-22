@@ -7,33 +7,22 @@ import java.util.Date;
 public class Message {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "message_id")
-    private int id_message;
-
-    @Column(name="text")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    private Date sendTime;
+    @Column(columnDefinition = "TEXT")
     private String text;
 
-    @Column(name="send_time")
-    private Date sendTime;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
-    @Column(name="user_id")
-    private int userId;
-
-    public int getId_message() {
-        return id_message;
+    public int getId() {
+        return id;
     }
 
-    public void setId_message(int id_message) {
-        this.id_message = id_message;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Date getSendTime() {
@@ -44,11 +33,19 @@ public class Message {
         this.sendTime = sendTime;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getText() {
+        return text;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
