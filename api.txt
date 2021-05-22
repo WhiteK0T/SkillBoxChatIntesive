@@ -23,17 +23,13 @@ GET /api/messages — получение списка сообщений
 Ответ: {
     "message": [
             {
-                "id": 4732,
-                "id_message": 4732,
                 "name": "Дмитрий Петров"
-                "message": "bla bla"
+                "text": "bla bla"
                 "time" : 21321
             },
             {
-                "id": 3273,
-                "id_message": 4732,
                 "name": "Алексей Дмитриев"
-                "message": "bla bla"
+                "text": "bla bla"
                 "time" : 21321
             }
         ]
