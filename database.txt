@@ -7,6 +7,7 @@ user
 
 message
 
+- id_message INT NOT NULL AUTO_INCREMENT
 - id_user INT NOT NULL
 - time_message DATETIME NOT NULL
-- content VARCHAR(255) NOT NULL
+- content TEXT NOT NULL
